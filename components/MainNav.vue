@@ -19,8 +19,7 @@
           </v-list-item-logo>
         </v-list-item>
 
-        <v-divider/>
-
+         <v-divider/>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -32,7 +31,29 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+              <v-menu open-on-hover top offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                light
+                color="grey"
+                dark
+                v-bind="attrs"
+                v-on="on"
+                icon
+                left
+              >Hover
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item
+                v-for="(item, index) in items"
+                :key="index"
+                @click="abrirFecharMenu"
+              >
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -71,7 +92,7 @@ export default {
       miniVariant: false,
       permanent: true,
       items: [
-        { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/teste' },
+        { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
         { title: 'Posts', icon: 'mdi-post', to: '/posts' }
       ],
       right: null
