@@ -16,22 +16,12 @@
           class="elevation-1"
         >
           <template v-slot:top>
-            <v-toolbar flat dark color="primary">
-              <v-toolbar-title>Meus Posts</v-toolbar-title>
+            <v-toolbar flat dark color="??F0F8FF">
+              <v-toolbar-title>Meu Ponto</v-toolbar-title>
             </v-toolbar>
             <v-divider class="mx-4" inset vertical />
             <v-spacer />
             <v-dialog v-model="dialog" max-width="500px">
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  color="primary"
-                  dark
-                  class="mb-2"
-                  v-bind="attrs"
-                  v-on="on">
-                  Criar
-                </v-btn>
-              </template>
               <v-card>
                 <v-card-title>
                   <span class="headline">{{ formTitle }}</span>
@@ -98,22 +88,29 @@ export default {
       dialog: false,
       headers: [
         {
-          text: 'ID',
-          value: 'id'
+          text: 'FILIAL',
+          value: 'filial'
         },
         {
-          text: 'Título',
-          value: 'title'
+          text: 'MATRÍCULA',
+          value: 'matricula'
         },
         {
-          text: 'Corpo',
-          value: 'body',
-          sortable: false
+          text: 'DATA',
+          value: 'data'
         },
         {
-          text: 'Ações',
-          value: 'actions',
-          sortable: false
+          text: 'COD EVENTO',
+          value: 'cod_evento'
+
+        },
+        {
+          text: 'DESCRIÇÃO',
+          value: 'descricao'
+        },
+        {
+          text: 'QTDE',
+          value: 'qtde'
         }
       ],
       posts: [],

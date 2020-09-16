@@ -93,7 +93,7 @@ export default {
       permanent: true,
       items: [
         { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
-        { title: 'Posts', icon: 'mdi-post', to: '/posts' }
+        { title: 'Banco de Horas', icon: 'mdi-post', to: '/banco_Horas' }
       ],
       right: null
     }
